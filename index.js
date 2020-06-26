@@ -1,7 +1,23 @@
-var express = require("express");
-var app = express();
+import "core-js";
+import express from "express";
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get("/", function (req, res) {
-  res.send("hello world");
-});
+const app = express();
+
+const port = 3000;
+
+const handleListening = () =>
+  console.log(`Example app listening at http://localhost:${port}`);
+
+const handleHome = (req, res) => res.send("Hello Home");
+const handlePortfolio = (req, res) => res.send("Hello Portfolio");
+const betweenHome = (req, res, next) => {
+  console.log("Between");
+  next();
+};
+
+app.use(betweenHome);
+
+app.get("/", handleHome);
+app.get("/portfolio", handlePortfolio);
+
+app.listen(port, handleListening);
