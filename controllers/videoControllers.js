@@ -10,10 +10,18 @@ export const home = async (req, res) => {
   }
 };
 
-export const search = (req, res) => {
+export const search = async (req, res) => {
   const {
     query: { term: searchingBy },
   } = req;
+  let videos = [];
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingBy, $options: "i" },
+    });
+  } catch (error) {
+    console.log(error);
+  }
   res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
 
@@ -31,7 +39,7 @@ export const postUpload = async (req, res) => {
     description,
   });
   console.log(newVideo);
-  //비디오 업로드, 저장
+  // 비디오 업로드, 저장
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
@@ -48,7 +56,7 @@ export const videoDetail = async (req, res) => {
   }
 };
 
-//editVideo 가져오기
+// editVideo 가져오기
 export const getEditVideo = async (req, res) => {
   const {
     params: { id },
@@ -61,7 +69,7 @@ export const getEditVideo = async (req, res) => {
   }
 };
 
-//editVideo 업데이트하기
+// editVideo 업데이트하기
 export const postEditVideo = async (req, res) => {
   const {
     params: { id },
@@ -81,6 +89,8 @@ export const deleteVideo = async (req, res) => {
   } = req;
   try {
     await Video.findOneAndRemove({ _id: id });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
   res.redirect(routes.home);
 };

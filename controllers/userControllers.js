@@ -11,8 +11,8 @@ export const postJoin = (req, res) => {
   if (password !== password2) {
     res.status(400);
   } else {
-    //사용자등록
-    //사용자 로그인
+    // 사용자등록
+    // 사용자 로그인
     res.redirect(routes.home);
   }
   res.render("join", { pageTitle: "Join" });
@@ -25,7 +25,7 @@ export const postLogin = (req, res) => {
 };
 
 export const logout = (req, res) => {
-  //로그아웃 처리
+  // 로그아웃 처리
   res.redirect(routes.home);
 };
 export const userDetail = (req, res) =>
