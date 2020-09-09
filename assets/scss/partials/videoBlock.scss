@@ -1,0 +1,13 @@
+.videoBlock {
+    video {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .videoBlock__title {
+        font-size: 1rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+        color: $colorWhite;
+    }
+}

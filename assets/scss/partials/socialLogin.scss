@@ -1,0 +1,28 @@
+.social-login {
+    width: 100%;
+    max-width: 320px;
+
+    button {
+        width: 100%;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+        border-radius: 1.4rem;
+        color: $colorWhite;
+
+        svg {
+            margin-right: 1rem;
+        }
+
+        &.social-login--github {
+            background-color: $colorGithub;
+        }
+
+        &.social-login--twitter {
+            background-color: $colorTwitter;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 1rem
+        }
+    }
+}

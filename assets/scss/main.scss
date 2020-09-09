@@ -1,0 +1,30 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $colorBg;
+    color: $colorWhite;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem
+}
+
+main {
+    widows: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 70vh
+}
+
+a,
+button,
+input {
+    border: none;
+}
+
+input {
+    &:focus {
+        outline: none;
+    }
+}

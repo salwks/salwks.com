@@ -1,0 +1,22 @@
+.footer {
+    margin-top: 1rem;
+    padding: 2rem 0;
+    background-color: $colorLayer;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .footer__icon {
+        color: $colorWhite;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer__text {
+        color: $colorWhite;
+        font-weight: 300;
+        font-size: 1rem;
+        text-transform: uppercase;
+    }
+}
