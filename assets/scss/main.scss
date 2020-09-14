@@ -11,20 +11,44 @@ body {
 }
 
 main {
-    widows: 100%;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    min-height: 70vh
+    min-height: 70vh;
+}
+
+.fileUpload {
+    width: 100%;
+    border: none;
+    border-radius: 1.4rem;
+    font-size: 1rem;
+    color: $colorWhite;
+    max-width: 320px;
+    resize: none;
+    padding: 1rem 0;
+    box-sizing: border-box;
+
+    input[type="file"] {
+        padding: 0.8rem 1rem;
+    }
 }
 
 a,
 button,
-input {
+input,
+textarea {
     border: none;
-}
 
-input {
     &:focus {
         outline: none;
     }
+}
+
+button.delete {
+    width: 100%;
+    background-color: $colorGrey;
+    color: $colorLayer;
+    padding: 0.8rem;
+    border-radius: 1.4rem;
+    font-size: 1rem;
 }
